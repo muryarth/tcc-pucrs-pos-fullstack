@@ -1,0 +1,15 @@
+# Node
+node_modules/
+
+# Docker
+dist/
+build/
+Dockerfile
+.dockerignore
+
+# Git
+.git/
+.gitignore
+
+# Dev
+.env
