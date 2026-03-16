@@ -1,3 +1,5 @@
+
+/** Formata um número para o padrão de moeda brasileira (BRL) */
 const formatToBRL = (valor: number): string => {
   if (valor < 0) return "R$ 0,00";
 
