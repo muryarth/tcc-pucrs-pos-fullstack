@@ -44,5 +44,6 @@ jobs:
       with:
         context: ./app-front-odonto-manager
         push: ${{ github.event_name != 'pull_request' }}
-        tags: muryarth/app-front-odonto-manager:${{ github.ref_name }}-${{ github.sha }}
-          
+        tags: |
+          muryarth/app-front-odonto-manager:${{ github.ref_name }}-${{ github.sha }}
+          muryarth/app-front-odonto-manager:latest
