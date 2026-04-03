@@ -1,13 +1,19 @@
-name: Frontend CI
+name: Frontend CI/CD Pipeline
 
 on:
   push:
     branches: [ "main", "develop" ]
+    paths:
+      - 'app-front-odonto-manager/**'
   pull_request:
     branches: [ "main", "develop" ]
+    paths:
+      - 'app-front-odonto-manager/**'
 
 jobs:
-  build-test:
+
+  # Build do frontend usando Node.js e Docker
+  build-frontend:
     runs-on: ubuntu-latest
     
     steps:
