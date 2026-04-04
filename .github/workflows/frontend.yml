@@ -44,12 +44,20 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+    # 1. Cria uma tag limpa e segura para o Docker
+    # Obs.: vai trocar caracteres especiais por hífens para que o Docker aceite a tag
+    - name: Preparar tag para Docker
+      id: prep
+      run: |
+        TAG=$(echo ${{ github.ref_name }} | sed 's/[^a-zA-Z0-9]/-/g' | tr '[:upper:]' '[:lower:]')
+        echo "tag=$TAG" >> $GITHUB_OUTPUT
+
     # Build e Push para o Docker Hub
-    - name: Build and Push Docker Image
+    - name: Build e Push da imagem do Docker
       uses: docker/build-push-action@v5
       with:
         context: ./app-front-odonto-manager
         push: ${{ github.event_name != 'pull_request' }}
         tags: |
-          muryarth/app-front-odonto-manager:${{ github.ref_name }}-${{ github.sha }}
+          muryarth/app-front-odonto-manager:${{ steps.prep.outputs.tag }}-${{ github.sha }}
           muryarth/app-front-odonto-manager:latest
