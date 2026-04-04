@@ -78,4 +78,4 @@ jobs:
       with:
         context: ./app-back-odonto-manager/api-records
         push: ${{ github.event_name != 'pull_request' }}
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/odonto-api-records:${{ steps.prep.outputs.tag }}
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/app-back-odonto-api-records:${{ steps.prep.outputs.tag }}
