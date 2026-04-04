@@ -1,7 +1,7 @@
 function HomeComponent() {
   return (
     <>
-      <p>Oláááá! :)</p>
+      <p>Olá! :)</p>
     </>
   );
 }
