@@ -71,15 +71,14 @@ jobs:
       with:
         project-name: odonto-manager-api-records
 
-    # Deploy no ECS — atualiza o service com a nova imagem
+    # Deploy no ECS — força o service a puxar a imagem latest mais recente
     - name: Deploy no ECS
       if: github.ref == 'refs/heads/main'
-      uses: aws-actions/amazon-ecs-deploy-task-definition@v1
-      with:
-        task-definition: odonto-manager-api-records-task
-        service: odonto-manager-api-records-service
-        cluster: odonto-manager-cluster
-        wait-for-service-stability: true
+      run: |
+        aws ecs update-service \
+          --cluster odonto-manager-cluster \
+          --service odonto-manager-api-records-service \
+          --force-new-deployment
 
     # Push para o Docker Hub (apenas na develop)
     - name: Setup do Docker Buildx
