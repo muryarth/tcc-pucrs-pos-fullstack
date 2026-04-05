@@ -1,0 +1,26 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo Autenticando no ECR...
+      - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
+      - IMAGE_URI=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/odonto-manager/api-records
+      - IMAGE_TAG=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c1-8)
+
+  build:
+    commands:
+      - echo Buildando a imagem Docker...
+      - docker build -t $IMAGE_URI:$IMAGE_TAG -t $IMAGE_URI:latest ./app-back-odonto-manager/api-records
+
+  post_build:
+    commands:
+      - echo Fazendo push da imagem para o ECR...
+      - docker push $IMAGE_URI:$IMAGE_TAG
+      - docker push $IMAGE_URI:latest
+      - echo Gravando imageDefinitions.json para o ECS...
+      - printf '[{"name":"api-records","imageUri":"%s"}]' $IMAGE_URI:$IMAGE_TAG > imageDefinitions.json
+
+artifacts:
+  files:
+    - imageDefinitions.json
