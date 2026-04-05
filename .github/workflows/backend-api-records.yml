@@ -9,6 +9,7 @@ on:
     branches: [ "main" ]
     paths:
       - 'app-back-odonto-manager/api-records/**'
+  workflow_dispatch:
 
 jobs:
 
