@@ -30,7 +30,7 @@ jobs:
     # Roda testes usando o Jest previamente configurado para o projeto
     - name: Rodar Jest
       run: |
-        cd app-front-odonto-manager
+        cd app-front-odonto-manager/client-side-web
         npm i
         npm test -- --watchAll=false
 
@@ -57,7 +57,7 @@ jobs:
     - name: Build e Push da imagem do Docker
       uses: docker/build-push-action@v5
       with:
-        context: ./app-front-odonto-manager
+        context: ./app-front-odonto-manager/client-side-web
         push: ${{ github.event_name != 'pull_request' }}
         tags: |
           ${{ secrets.DOCKERHUB_USERNAME }}/app-front-odonto-manager:${{ steps.prep.outputs.tag }}-${{ github.sha }}
