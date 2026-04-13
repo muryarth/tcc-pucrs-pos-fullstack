@@ -1,14 +1,15 @@
-name: Frontend CI/CD Pipeline
+# Trata-se do frontend que rodará no browser
+name: Pipeline CI/CD do frontend "Client Side Web" 
 
 on:
   push:
     branches: [ "main", "develop" ]
     paths:
-      - 'app-front-odonto-manager/**'
+      - 'app-front-odonto-manager/client-side-web/**'
   pull_request:
     branches: [ "main" ]
     paths:
-      - 'app-front-odonto-manager/**'
+      - 'app-front-odonto-manager/client-side-web/**'
 
 jobs:
 

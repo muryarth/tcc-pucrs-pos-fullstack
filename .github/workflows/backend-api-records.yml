@@ -1,3 +1,4 @@
+# Trata-se do backend apenas de um microsserviço (Relacionado a prontuários)
 name: Pipeline CI/CD do microserviço "API Records"
 
 on:
