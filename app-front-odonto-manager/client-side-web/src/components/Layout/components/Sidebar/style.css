@@ -44,8 +44,7 @@ ul.app-layout-sidebar li > button.sidebar-parent:hover {
   font-size: 1.05rem;
 }
 
-ul.app-layout-sidebar li a.active,
-ul.app-layout-sidebar li > button.sidebar-parent.active {
+ul.app-layout-sidebar li a.active {
   background-color: var(--color-secondary);
   color: var(--color-white);
 }
@@ -63,8 +62,7 @@ ul.app-layout-sidebar > li::after {
 ul.app-layout-sidebar > li:last-child::after,
 ul.app-layout-sidebar > li:hover::after,
 ul.app-layout-sidebar > li:has(+ li:hover)::after,
-ul.app-layout-sidebar > li:has(> a.active)::after,
-ul.app-layout-sidebar > li:has(> .sidebar-parent.active)::after {
+ul.app-layout-sidebar > li:has(> a.active)::after {
   opacity: 0;
 }
 

@@ -59,7 +59,7 @@ function SidebarComponent({ isOpen, isAnimating }: SidebarProps) {
           ) : (
             <>
               <button
-                className={`sidebar-parent${hasActivePath(option) ? " active" : ""}`}
+                className="sidebar-parent"
                 onClick={() => toggleExpand(option.label)}
               >
                 <span className="d-flex align-items-center gap-2">
