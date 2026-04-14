@@ -1,0 +1,42 @@
+header.app-layout-header {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  height: var(--header-height);
+  font-size: 1rem;
+}
+
+header.app-layout-header button.app-layout-header-toggle {
+  color: var(--color-white) !important;
+  font-size: 1.25rem;
+}
+
+header.app-layout-header button.app-layout-header-toggle:hover {
+  color: var(--color-white) !important;
+  opacity: 0.75;
+}
+
+header.app-layout-header div.app-layout-header-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+header.app-layout-header div.app-layout-header-user {
+  font-size: 0.85rem;
+  line-height: 1.3;
+  text-align: right;
+}
+
+header.app-layout-header span.app-layout-header-role-badge {
+  color: var(--badge-color);
+  border: 1px solid var(--badge-color);
+  border-radius: 6px;
+  padding: 0.1rem 0.45rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  white-space: nowrap;
+}

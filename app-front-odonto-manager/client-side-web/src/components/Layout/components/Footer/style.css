@@ -1,0 +1,19 @@
+footer.app-layout-footer {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-size: 0.85rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+footer.app-layout-footer .app-layout-footer-icon {
+  color: var(--color-white);
+  text-decoration: none;
+  transition: opacity 0.2s;
+  flex-shrink: 0;
+}
+
+footer.app-layout-footer .app-layout-footer-icon:hover {
+  opacity: 0.75;
+}
+
