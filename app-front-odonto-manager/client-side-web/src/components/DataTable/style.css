@@ -1,0 +1,144 @@
+div.data-table-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* Barra de ações */
+div.data-table-wrapper > div.data-table-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 0.75rem;
+  background-color: var(--color-primary);
+  border-radius: 6px;
+  color: var(--color-white);
+  font-size: 0.85rem;
+  transition: opacity 0.2s ease;
+}
+
+div.data-table-wrapper > div.data-table-actions.data-table-actions-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+div.data-table-wrapper > div.data-table-actions span.data-table-actions-count {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+div.data-table-wrapper > div.data-table-actions div.data-table-actions-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+div.data-table-wrapper > div.data-table-actions button.data-table-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.65rem;
+  background: transparent;
+  border: 1px solid var(--color-white);
+  border-radius: 6px;
+  color: var(--color-white);
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+}
+
+div.data-table-wrapper > div.data-table-actions button.data-table-action-btn:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+div.data-table-wrapper > div.data-table-actions button.data-table-action-btn span.data-table-action-icon {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+/* Container com scroll */
+div.data-table-wrapper > div.data-table-scroll {
+  overflow: auto;
+  border: 1px solid var(--color-gray);
+  border-radius: 6px;
+}
+
+/* Tabela */
+div.data-table-wrapper table.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  white-space: nowrap;
+  font-size: 0.9rem;
+}
+
+div.data-table-wrapper table.data-table thead {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+div.data-table-wrapper table.data-table th {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  font-weight: 600;
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+}
+
+div.data-table-wrapper table.data-table td {
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+div.data-table-wrapper table.data-table tbody tr {
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+div.data-table-wrapper table.data-table tbody tr:hover {
+  background-color: var(--color-tertiary);
+  color: var(--color-white);
+}
+
+div.data-table-wrapper table.data-table tbody tr.data-table-row-selected {
+  background-color: #e8ede9;
+}
+
+div.data-table-wrapper table.data-table th.data-table-checkbox-col,
+div.data-table-wrapper table.data-table td.data-table-checkbox-col {
+  width: 40px;
+  text-align: center;
+}
+
+div.data-table-wrapper table.data-table td.data-table-checkbox-col input[type="checkbox"],
+div.data-table-wrapper table.data-table td.data-table-checkbox-col input[type="radio"] {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  accent-color: var(--color-primary);
+}
+
+div.data-table-wrapper table.data-table td.data-table-empty {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--color-secondary);
+  font-style: italic;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  div.data-table-wrapper > div.data-table-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  div.data-table-wrapper table.data-table {
+    font-size: 0.82rem;
+  }
+}
