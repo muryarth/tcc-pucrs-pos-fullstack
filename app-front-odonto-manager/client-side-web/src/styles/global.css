@@ -7,3 +7,28 @@
   --color-gray: #cccccc;
   --header-height: 76px;
 }
+
+/* Outros */
+.bb-primary {
+  border-bottom: 1px solid var(--color-primary);
+}
+
+.bb-gray {
+  border-bottom: 1px solid var(--color-gray);
+}
+
+.bb-thickness-1 {
+  border-bottom-width: 1px;
+}
+
+.bb-thickness-2 {
+  border-bottom-width: 2px;
+}
+
+.fc-primary {
+  color: var(--color-primary);
+}
+
+.fc-gray {
+  color: var(--color-gray);
+}
