@@ -1,0 +1,9 @@
+/* Paleta de cores  */
+:root {
+  --color-primary: #455149;
+  --color-secondary: #929e94;
+  --color-tertiary: #a8b4ab;
+  --color-white: #ffffff;
+  --color-gray: #cccccc;
+  --header-height: 76px;
+}

@@ -1,11 +1,7 @@
-import HomeComponent from "./screens/Home"
+import AppRoutes from "./routes";
 
 function App() {
-  return (
-    <>
-      <HomeComponent />
-    </>
-  )
+  return <AppRoutes />;
 }
 
-export default App
+export { App };
