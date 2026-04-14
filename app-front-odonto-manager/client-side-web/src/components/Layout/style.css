@@ -11,6 +11,8 @@ main.d-flex > .flex-grow-1 {
 .app-layout-content {
   flex: 1;
   overflow: auto;
+  min-width: 0;
+  padding: 1rem;
 }
 
 .app-layout-backdrop {

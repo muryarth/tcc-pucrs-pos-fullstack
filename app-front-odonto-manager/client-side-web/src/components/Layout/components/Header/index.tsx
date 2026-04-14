@@ -3,15 +3,8 @@ import "./style.css";
 import appLogo from "../../../../assets/app-logo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faUser } from "@fortawesome/free-solid-svg-icons";
-
-type HeaderProps = {
-  onToggleSidebar: () => void;
-};
-
-type UserRole =
-  | "strategic-manager"
-  | "operational-assistant"
-  | "operational-dentist";
+import { usuarioLogado } from "../../../../mock/usuarios";
+import type { UserRole } from "../../../../mock/usuarios";
 
 const roles: { key: UserRole; label: string; color: string }[] = [
   { key: "strategic-manager", label: "Gestor", color: "#ffcccc" },
@@ -23,9 +16,12 @@ const roles: { key: UserRole; label: string; color: string }[] = [
   { key: "operational-dentist", label: "Dentista", color: "#ccffcc" },
 ];
 
+type HeaderProps = {
+  onToggleSidebar: () => void;
+};
+
 function HeaderComponent({ onToggleSidebar }: HeaderProps) {
-  const userRole: UserRole = "strategic-manager"; // Simulação de role do usuário
-  const role = roles.find((r) => r.key === userRole)!;
+  const role = roles.find((r) => r.key === usuarioLogado.role)!;
 
   return (
     <header className="app-layout-header d-flex align-items-center justify-content-between px-3">
@@ -43,8 +39,8 @@ function HeaderComponent({ onToggleSidebar }: HeaderProps) {
             {role.label}
           </span>
           <div className="app-layout-header-user">
-            <p className="m-0 fw-semibold">Arthur Azevedo Mury</p>
-            <p className="m-0">arthur.mury@outlook.com</p>
+            <p className="m-0 fw-semibold">{usuarioLogado.nome}</p>
+            <p className="m-0">{usuarioLogado.email}</p>
           </div>
           <div className="app-layout-header-avatar d-flex align-items-center justify-content-center">
             <FontAwesomeIcon icon={faUser} />
