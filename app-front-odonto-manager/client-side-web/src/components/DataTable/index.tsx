@@ -21,15 +21,22 @@ type DataTableProps<T> = {
   multiSelect?: boolean;
 };
 
-function DataTable<T>({ data, columns, actions = [], rowKey, multiSelect = true }: DataTableProps<T>) {
+function DataTable<T>({
+  data,
+  columns,
+  actions = [],
+  rowKey,
+  multiSelect = true,
+}: DataTableProps<T>) {
   const [selectedKeys, setSelectedKeys] = useState<Set<string>>(new Set());
 
   const allKeys = useMemo(
     () => data.map((row) => String(row[rowKey])),
-    [data, rowKey]
+    [data, rowKey],
   );
 
-  const allSelected = allKeys.length > 0 && selectedKeys.size === allKeys.length;
+  const allSelected =
+    allKeys.length > 0 && selectedKeys.size === allKeys.length;
 
   function handleToggleAll() {
     if (allSelected) {
@@ -56,7 +63,7 @@ function DataTable<T>({ data, columns, actions = [], rowKey, multiSelect = true 
 
   const selectedRows = useMemo(
     () => data.filter((row) => selectedKeys.has(String(row[rowKey]))),
-    [data, selectedKeys, rowKey]
+    [data, selectedKeys, rowKey],
   );
 
   const hasActions = actions.length > 0;
@@ -65,9 +72,14 @@ function DataTable<T>({ data, columns, actions = [], rowKey, multiSelect = true 
   return (
     <div className="data-table-wrapper">
       {hasActions && (
-        <div className={`data-table-actions${hasSelection ? "" : " data-table-actions-hidden"}`}>
+        <div
+          className={`data-table-actions${hasSelection ? "" : " data-table-actions-hidden"}`}
+        >
           <span className="data-table-actions-count">
-            {selectedKeys.size} {selectedKeys.size === 1 ? "item selecionado" : "itens selecionados"}
+            {selectedKeys.size}{" "}
+            {selectedKeys.size === 1
+              ? "item selecionado"
+              : "itens selecionados"}
           </span>
           <div className="data-table-actions-buttons">
             {actions.map((action) => (
@@ -77,7 +89,9 @@ function DataTable<T>({ data, columns, actions = [], rowKey, multiSelect = true 
                 className="data-table-action-btn"
                 onClick={() => action.onClick(selectedRows)}
               >
-                {action.icon && <span className="data-table-action-icon">{action.icon}</span>}
+                {action.icon && (
+                  <span className="data-table-action-icon">{action.icon}</span>
+                )}
                 {action.label}
               </button>
             ))}
@@ -108,7 +122,10 @@ function DataTable<T>({ data, columns, actions = [], rowKey, multiSelect = true 
           <tbody>
             {data.length === 0 ? (
               <tr>
-                <td colSpan={columns.length + (hasActions ? 1 : 0)} className="data-table-empty">
+                <td
+                  colSpan={columns.length + (hasActions ? 1 : 0)}
+                  className="data-table-empty"
+                >
                   Nenhum registro encontrado
                 </td>
               </tr>
@@ -121,7 +138,9 @@ function DataTable<T>({ data, columns, actions = [], rowKey, multiSelect = true 
                   <tr
                     key={key}
                     className={isSelected ? "data-table-row-selected" : ""}
-                    onClick={hasActions ? () => handleToggleRow(key) : undefined}
+                    onClick={
+                      hasActions ? () => handleToggleRow(key) : undefined
+                    }
                     style={hasActions ? undefined : { cursor: "default" }}
                   >
                     {hasActions && (

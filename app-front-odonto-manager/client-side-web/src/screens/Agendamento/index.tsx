@@ -8,7 +8,7 @@ const columns: Column<Agendamento>[] = [
   { key: "tipo_procedimento", label: "Procedimento" },
   { key: "status", label: "Status" },
   { key: "paciente_cpf", label: "Paciente (CPF)" },
-  { key: "dentista_cpf", label: "Dentista (CPF)" },
+  { key: "dentista_nome", label: "Dentista" },
   { key: "observacao", label: "Observação" },
 ];
 
