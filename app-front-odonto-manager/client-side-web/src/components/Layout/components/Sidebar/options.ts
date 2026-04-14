@@ -1,37 +1,54 @@
+import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import {
   faCalendarCheck,
   faUserInjured,
   faUserDoctor,
-  faFileMedical,
   faDollarSign,
+  faStethoscope,
+  faBoxes,
 } from "@fortawesome/free-solid-svg-icons";
 
-const sidebarOptions = [
+type NavigationPath = {
+  label: string;
+  path: string;
+  icon?: IconDefinition;
+};
+
+type SidebarOption = {
+  label: string;
+  icon: IconDefinition;
+  navigationPaths: NavigationPath[];
+};
+
+const sidebarOptions: SidebarOption[] = [
   {
     label: "Agendamentos",
     icon: faCalendarCheck,
-    navigationPath: "/",
+    navigationPaths: [{ label: "Agendamentos", path: "/" }],
   },
   {
     label: "Pacientes",
     icon: faUserInjured,
-    navigationPath: "/pacientes",
-  },
-  {
-    label: "Equipe",
-    icon: faUserDoctor,
-    navigationPath: "/equipe",
-  },
-  {
-    label: "Prontuários",
-    icon: faFileMedical,
-    navigationPath: "/prontuarios",
+    navigationPaths: [{ label: "Pacientes", path: "/pacientes" }],
   },
   {
     label: "Financeiro",
     icon: faDollarSign,
-    navigationPath: "/financeiro",
+    navigationPaths: [
+      {
+        label: "Consultas",
+        path: "/financeiro/consultas",
+        icon: faStethoscope,
+      },
+      { label: "Materiais", path: "/financeiro/materiais", icon: faBoxes },
+    ],
+  },
+  {
+    label: "Equipe",
+    icon: faUserDoctor,
+    navigationPaths: [{ label: "Equipe", path: "/equipe" }],
   },
 ];
 
 export { sidebarOptions };
+export type { SidebarOption, NavigationPath };

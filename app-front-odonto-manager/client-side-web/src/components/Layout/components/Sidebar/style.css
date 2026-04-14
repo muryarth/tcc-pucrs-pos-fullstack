@@ -1,25 +1,112 @@
 ul.app-layout-sidebar {
-  width: 200px;
+  width: 240px;
   list-style-type: none;
   border-right: 1px solid var(--color-secondary);
-  padding: 0;
+  padding: 0.15rem 0.15rem;
   margin: 0;
   height: 100%;
   flex-shrink: 0;
+  overflow-y: auto;
 }
 
-ul.app-layout-sidebar li a {
+ul.app-layout-sidebar li a,
+ul.app-layout-sidebar li > button.sidebar-parent {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1rem;
   color: var(--color-primary);
+  font-weight: 600;
+  border-radius: 6px;
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease,
+    font-size 0.3s ease;
+}
+
+ul.app-layout-sidebar li a {
   text-decoration: none;
 }
 
-ul.app-layout-sidebar li a:hover {
-  transition: ease 0.3s;
-  background-color: var(--color-tertiary);
+ul.app-layout-sidebar li > button.sidebar-parent {
+  justify-content: space-between;
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
+}
+
+ul.app-layout-sidebar li a:hover,
+ul.app-layout-sidebar li > button.sidebar-parent:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  font-size: 1.05rem;
+}
+
+ul.app-layout-sidebar li a.active,
+ul.app-layout-sidebar li > button.sidebar-parent.active {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+}
+
+ul.app-layout-sidebar > li::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background-color: var(--color-gray);
+  margin: 0 0.5rem;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+ul.app-layout-sidebar > li:last-child::after,
+ul.app-layout-sidebar > li:hover::after,
+ul.app-layout-sidebar > li:has(+ li:hover)::after,
+ul.app-layout-sidebar > li:has(> a.active)::after,
+ul.app-layout-sidebar > li:has(> .sidebar-parent.active)::after {
+  opacity: 0;
+}
+
+ul.app-layout-sidebar li a.active {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  font-weight: 600;
+}
+
+ul.app-layout-sidebar li > button.sidebar-parent .sidebar-chevron {
+  font-size: 0.7rem;
+}
+
+ul.app-layout-sidebar li > ul.sidebar-suboptions {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: color-mix(in srgb, var(--color-secondary) 15%, transparent);
+  border-left: 3px solid var(--color-secondary);
+}
+
+ul.app-layout-sidebar li > ul.sidebar-suboptions li a {
+  padding-left: 2rem !important;
+  font-size: 0.9rem;
+  color: var(--color-secondary);
+  font-weight: 500;
+  border-radius: 6px;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    font-size 0.3s ease;
+}
+
+ul.app-layout-sidebar li > ul.sidebar-suboptions li a:hover {
+  color: var(--color-white);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+ul.app-layout-sidebar li > ul.sidebar-suboptions li a.active {
+  color: var(--color-white);
+  font-weight: 600;
 }
 
 @media (max-width: 767px) {
@@ -32,7 +119,6 @@ ul.app-layout-sidebar li a:hover {
     height: calc(100vh - var(--header-height));
     background-color: var(--color-white);
     transform: translateX(-100%);
-    overflow-y: auto;
     border-right: none;
   }
 
