@@ -1,0 +1,19 @@
+h6.ficha-section-title {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+span.ficha-categoria-badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  min-width: 90px;
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+  text-align: center;
+  color: #6b7280;
+  border: 1px solid #6b7280;
+}
