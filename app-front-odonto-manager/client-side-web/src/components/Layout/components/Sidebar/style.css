@@ -107,7 +107,7 @@ ul.app-layout-sidebar li > ul.sidebar-suboptions li a.active {
   font-weight: 600;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 991.98px) {
   ul.app-layout-sidebar {
     position: fixed;
     top: var(--header-height);

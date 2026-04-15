@@ -1,0 +1,130 @@
+div.auth-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #455149 0%, #929e94 50%, #a8b4ab 100%);
+  padding: 1rem;
+}
+
+div.auth-card {
+  width: 100%;
+  max-width: 400px;
+  background-color: var(--color-white);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+  padding: 2.5rem 2rem 2rem;
+}
+
+/* Logo */
+div.auth-logo {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+div.auth-logo img {
+  height: 60px;
+  margin-bottom: 0.5rem;
+}
+
+div.auth-logo h4 {
+  margin: 0;
+  color: var(--color-primary);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+div.auth-logo p {
+  margin: 0.2rem 0 0;
+  color: var(--color-secondary);
+  font-size: 0.82rem;
+}
+
+/* Form */
+form.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+div.auth-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+div.auth-field label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+div.auth-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+div.auth-input-wrapper .auth-input-icon {
+  position: absolute;
+  left: 0.75rem;
+  color: var(--color-secondary);
+  font-size: 0.88rem;
+  pointer-events: none;
+}
+
+div.auth-input-wrapper input {
+  width: 100%;
+  padding: 0.6rem 0.75rem 0.6rem 2.25rem;
+  font-size: 0.9rem;
+  border: 1px solid var(--color-gray);
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+div.auth-input-wrapper input:focus {
+  border-color: var(--color-primary);
+}
+
+div.auth-input-wrapper input::placeholder {
+  color: #bbb;
+}
+
+/* Erro */
+p.auth-erro {
+  margin: 0;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.82rem;
+  color: #dc2626;
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 4px;
+}
+
+/* Botão */
+button.auth-submit-btn {
+  width: 100%;
+  padding: 0.65rem;
+  margin-top: 0.25rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+button.auth-submit-btn:hover {
+  opacity: 0.88;
+}
+
+/* Footer */
+p.auth-footer {
+  margin: 1.5rem 0 0;
+  text-align: center;
+  font-size: 0.72rem;
+  color: var(--color-secondary);
+}

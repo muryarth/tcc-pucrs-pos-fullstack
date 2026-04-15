@@ -28,7 +28,7 @@ function Layout() {
         <SidebarComponent isOpen={sidebarOpen} isAnimating={sidebarAnimating} />
         {sidebarOpen && (
           <div
-            className="app-layout-backdrop d-md-none"
+            className="app-layout-backdrop d-lg-none"
             onClick={handleClose}
           />
         )}

@@ -168,32 +168,31 @@ function DataTable<T>({
   return (
     <div className="data-table-wrapper">
       {hasActions && (
-        <div
-          className={`data-table-actions${hasSelection ? "" : " data-table-actions-hidden"}`}
-        >
+        <div className="data-table-actions">
           <span className="data-table-actions-count">
-            {selectedKeys.size}{" "}
-            {plural(
-              selectedKeys.size,
-              "item selecionado",
-              "itens selecionados",
-            )}
+            {hasSelection
+              ? `${selectedKeys.size} ${plural(selectedKeys.size, "item selecionado", "itens selecionados")}`
+              : "Nenhum item selecionado"}
           </span>
-          <div className="data-table-actions-buttons">
-            {actions.map((action) => (
-              <button
-                key={action.label}
-                type="button"
-                className="data-table-action-btn"
-                onClick={() => action.onClick(selectedRows)}
-              >
-                {action.icon && (
-                  <span className="data-table-action-icon">{action.icon}</span>
-                )}
-                {action.label}
-              </button>
-            ))}
-          </div>
+          {hasSelection && (
+            <div className="data-table-actions-buttons">
+              {actions.map((action) => (
+                <button
+                  key={action.label}
+                  type="button"
+                  className="data-table-action-btn"
+                  onClick={() => action.onClick(selectedRows)}
+                >
+                  {action.icon && (
+                    <span className="data-table-action-icon">
+                      {action.icon}
+                    </span>
+                  )}
+                  {action.label}
+                </button>
+              ))}
+            </div>
+          )}
         </div>
       )}
 

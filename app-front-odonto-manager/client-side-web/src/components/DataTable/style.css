@@ -20,11 +20,6 @@ div.data-table-wrapper > div.data-table-actions {
   transition: opacity 0.2s ease;
 }
 
-div.data-table-wrapper > div.data-table-actions.data-table-actions-hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-
 div.data-table-wrapper > div.data-table-actions span.data-table-actions-count {
   font-weight: 600;
   white-space: nowrap;

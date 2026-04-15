@@ -31,7 +31,7 @@ function HeaderComponent({ onToggleSidebar }: HeaderProps) {
       </div>
 
       <div className="d-flex align-items-center gap-3">
-        <div className="d-none d-md-flex align-items-center gap-3">
+        <div className="d-none d-lg-flex align-items-center gap-3">
           <span
             className="app-layout-header-role-badge"
             style={{ "--badge-color": role.color } as React.CSSProperties}
@@ -47,7 +47,7 @@ function HeaderComponent({ onToggleSidebar }: HeaderProps) {
           </div>
         </div>
         <button
-          className="app-layout-header-toggle btn d-md-none"
+          className="app-layout-header-toggle btn d-lg-none"
           onClick={onToggleSidebar}
           aria-label="Menu"
         >

@@ -1,3 +1,101 @@
+/* Botão voltar */
+button.ficha-voltar-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  background: transparent;
+  border: 1px solid var(--color-primary);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button.ficha-voltar-btn:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* Perfil */
+div.ficha-perfil {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+  background-color: #f8faf8;
+  border: 1px solid var(--color-secondary);
+  border-radius: 8px;
+}
+
+div.ficha-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 90px;
+  min-width: 90px;
+  border-radius: 50%;
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  font-size: 2.4rem;
+}
+
+h5.ficha-perfil-nome {
+  margin: 0 0 0.5rem;
+  color: var(--color-primary);
+  font-size: 1.15rem;
+}
+
+div.ficha-perfil-dados {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 2rem;
+  font-size: 0.88rem;
+}
+
+div.ficha-perfil-dados p {
+  margin: 0;
+}
+
+/* Abas */
+nav.ficha-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 2px solid var(--color-secondary);
+  margin-bottom: 1rem;
+}
+
+button.ficha-tab {
+  padding: 0.55rem 1.2rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-secondary);
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+button.ficha-tab:hover {
+  color: var(--color-primary);
+}
+
+button.ficha-tab--active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+div.ficha-tab-content {
+  min-height: 200px;
+}
+
+/* Seções dentro de abas */
 h6.ficha-section-title {
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
@@ -5,6 +103,11 @@ h6.ficha-section-title {
   font-weight: 600;
 }
 
+h6.ficha-section-title:first-child {
+  margin-top: 0;
+}
+
+/* Badge de categoria */
 span.ficha-categoria-badge {
   display: inline-block;
   padding: 0.2rem 0.6rem;

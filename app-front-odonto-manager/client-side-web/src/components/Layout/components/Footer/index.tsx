@@ -4,18 +4,18 @@ import { footerLinks } from "./links";
 
 function FooterComponent() {
   return (
-    <footer className="app-layout-footer d-none d-md-flex align-items-center justify-content-between px-3 py-2">
-      <div>
-        <p className="m-0 mb-1">
+    <footer className="app-layout-footer">
+      <div className="app-layout-footer-text">
+        <p>
           <strong>© 2026 Odonto Manager</strong> | TCC - Pós-Graduação em
           Desenvolvimento Fullstack - <strong>PUCRS</strong>
         </p>
-        <p className="m-0">
+        <p>
           Desenvolvido por:{" "}
           <strong>Arthur Azevedo Mury - arthur.mury@outlook.com</strong>
         </p>
       </div>
-      <div className="d-flex gap-3 fs-4">
+      <div className="app-layout-footer-icons">
         {footerLinks.map((link) => (
           <a
             key={link.url}
