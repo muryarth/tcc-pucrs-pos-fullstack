@@ -23,11 +23,12 @@ const dateBR = {
     return new Date(year, month - 1, day);
   },
 
-  /** Converte um objeto Date em string "dd/mm/aaaa". Com `showTime: true`, retorna "dd/mm/aaaa - hh:mm:ss" */
-  format(value: Date, options?: { showTime?: boolean }): string {
+  /** Converte um Date ou string ISO em "dd/mm/aaaa". Com `showTime: true`, retorna "dd/mm/aaaa - hh:mm:ss" */
+  format(value: Date | string, options?: { showTime?: boolean }): string {
+    const date = typeof value === "string" ? new Date(value) : value;
     const pad = (n: number) => String(n).padStart(2, "0");
-    const datePart = `${pad(value.getDate())}/${pad(value.getMonth() + 1)}/${value.getFullYear()}`;
-    const timePart = `${pad(value.getHours())}:${pad(value.getMinutes())}:${pad(value.getSeconds())}`;
+    const datePart = `${pad(date.getDate())}/${pad(date.getMonth() + 1)}/${date.getFullYear()}`;
+    const timePart = `${pad(date.getHours())}:${pad(date.getMinutes())}:${pad(date.getSeconds())}`;
     return options?.showTime ? `${datePart} - ${timePart}` : datePart;
   },
 };

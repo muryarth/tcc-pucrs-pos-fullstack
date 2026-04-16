@@ -1,0 +1,203 @@
+/* Botão voltar */
+button.cadastro-voltar-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  background: transparent;
+  border: 1px solid var(--color-primary);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button.cadastro-voltar-btn:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* Form */
+form.cadastro-form {
+  margin-top: 1rem;
+}
+
+fieldset.cadastro-fieldset {
+  border: 1px solid var(--color-primary);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+fieldset.cadastro-fieldset legend {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  padding: 0 0.4rem;
+  border-left: 2px solid var(--color-primary);
+}
+
+/* Grid de campos */
+div.cadastro-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem 0.75rem;
+}
+
+div.cadastro-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+div.cadastro-field--full {
+  grid-column: 1 / -1;
+}
+
+div.cadastro-field label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+div.cadastro-field input,
+div.cadastro-field select,
+div.cadastro-field textarea {
+  padding: 0.45rem 0.6rem;
+  font-size: 0.88rem;
+  border: 1px solid var(--color-gray);
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+div.cadastro-field input:focus,
+div.cadastro-field select:focus,
+div.cadastro-field textarea:focus {
+  border-color: var(--color-primary);
+}
+
+/* Condições de saúde */
+div.cadastro-condicoes {
+  margin-top: 1rem;
+}
+
+div.cadastro-condicoes-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+div.cadastro-condicoes-header h6 {
+  margin: 0;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+button.cadastro-add-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button.cadastro-add-btn:hover {
+  opacity: 0.85;
+}
+
+div.cadastro-condicao-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  gap: 0.5rem;
+  align-items: end;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+div.cadastro-condicao-row:last-child {
+  border-bottom: none;
+}
+
+button.cadastro-remove-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  margin-bottom: 2px;
+  color: #dc2626;
+  background: transparent;
+  border: 1px solid #dc2626;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+button.cadastro-remove-btn:hover {
+  background-color: #dc2626;
+  color: var(--color-white);
+}
+
+/* Ações do formulário */
+div.cadastro-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+button.cadastro-cancel-btn {
+  padding: 0.5rem 1.2rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  background: transparent;
+  border: 1px solid var(--color-primary);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button.cadastro-cancel-btn:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+button.cadastro-submit-btn {
+  padding: 0.5rem 1.2rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button.cadastro-submit-btn:hover {
+  opacity: 0.85;
+}
+
+/* Responsivo */
+@media (max-width: 640px) {
+  div.cadastro-grid {
+    grid-template-columns: 1fr;
+  }
+
+  div.cadastro-condicao-row {
+    grid-template-columns: 1fr;
+  }
+
+  button.cadastro-remove-btn {
+    width: 100%;
+  }
+}

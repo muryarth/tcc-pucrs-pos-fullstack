@@ -1,19 +1,43 @@
 footer.app-layout-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
   background-color: var(--color-primary);
   color: var(--color-white);
   font-size: 0.85rem;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+}
+
+footer.app-layout-footer .app-layout-footer-text p {
+  margin: 0;
+}
+
+footer.app-layout-footer .app-layout-footer-text p:first-child {
+  margin-bottom: 0.2rem;
+}
+
+footer.app-layout-footer .app-layout-footer-icons {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 1.25rem;
+  flex-shrink: 0;
 }
 
 footer.app-layout-footer .app-layout-footer-icon {
   color: var(--color-white);
   text-decoration: none;
   transition: opacity 0.2s;
-  flex-shrink: 0;
 }
 
 footer.app-layout-footer .app-layout-footer-icon:hover {
   opacity: 0.75;
+}
+
+@media (max-width: 991.98px) {
+  footer.app-layout-footer {
+    display: none;
+  }
 }
 
